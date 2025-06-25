@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Связь с нами</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src='https://connect.facebook.net/en_US/fbevents.js';
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script');
+
+    fbq('init', '1382540949647246'); 
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=558697003977909&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+  <div class="container">
+    <img src="logo.gif" alt="Логотип" class="logo" />
+    <h1>🔔 Идёт дополнительный набор на сезонные работы</h1>
+    <p>Свяжитесь с менеджером, чтобы получить актуальные вакансии и заполнить анкету для участвия в программе.</p>
+
+    <div class="buttons">
+      <a href="#" class="btn whatsapp" id="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      <a href="#" class="btn telegram" id="telegram-btn">
+        <i class="fab fa-telegram-plane"></i> Telegram
+      </a>
+    </div>
+
+    <div class="manager">
+      <img src="manager.jpg" alt="Менеджер" class="manager-photo" />
+      <div class="manager-info">
+        <h2>Артур</h2>
+        <p>Менеджер по подбору персонала</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pixel tracking with delay -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const whatsappBtn = document.getElementById('whatsapp-btn');
+      const telegramBtn = document.getElementById('telegram-btn');
+
+      if (whatsappBtn) {
+        whatsappBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          fbq('track', 'Contact', { content_name: 'WhatsApp' });
+          setTimeout(() => {
+            window.location.href = "https://wa.me/447594876048?text=Здравствуйте.%20Интересует%20участие%20в%20дополнительном%20наборе!";
+          }, 300);
+        });
+      }
+
+      if (telegramBtn) {
+        telegramBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          fbq('track', 'Contact', { content_name: 'Telegram' });
+          setTimeout(() => {
+            window.location.href = "https://t.me/brite_jobs_managr";
+          }, 300);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
